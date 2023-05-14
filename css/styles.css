@@ -10,7 +10,7 @@ body{
   overflow: hidden;
   position: relative;
   margin: 0 auto;
-  height: 750px;
+  height: 100%;
 }
 
 .background-img{
@@ -24,4 +24,23 @@ body{
 .home-text{
   width: 45%;
   padding: 5%;
+}
+
+.features{
+  margin: 1.5% 8%;
+  text-align: center;
+}
+
+.features-header{
+  padding: 2%;
+}
+
+.features-data{
+  font-size: 3rem;
+  padding: 10% 0;
+}
+
+.features-text{
+  font-size: 1.5rem;
+  font-weight: 600;
 }
