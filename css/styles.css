@@ -144,3 +144,17 @@ body{
   font-size: 1.2em;
   line-height: 2;
 }
+
+.end{
+  position: relative;
+  height: 10px;
+  width: 100%;
+}
+
+.footer{
+  position: absolute;
+  background-color: #264653;
+  height: 200px;
+  width: 100%;
+  bottom: 0px;
+}
