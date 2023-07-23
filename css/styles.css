@@ -6,6 +6,18 @@ body, html {
   width: 100%;
 }
 
+hr{
+  margin: 0;
+  width: 1;
+  background-color: rgb(255,255,255,0.5);
+  width: 84%;
+  transform: translate(8%, 0%);
+}
+
+.col-lg-6, .col-lg-9 .col-lg-5{
+  padding: 0;
+}
+
 /* Universal */
 .color-white{
   background-color: white;
@@ -138,18 +150,19 @@ body, html {
   }
 }
 
-.about-us-card{
-  padding: 15% 0 0 15%;
+.about-us-row{
+  padding: 7% 6% 0 7%;       
   color: white;
 }
 
 .about-us-background{
-  width: 100%;
- ;
+  width: 110%;
 }
 
 .card-text{
   font-size: 1.2rem;
+  letter-spacing: 1px;
+  color: rgb(255,255,255,0.8);
 }
 
 .get-in-touch-2{
@@ -160,3 +173,46 @@ body, html {
   font-size: 1.2rem;
 }
 
+/* Offer */
+.offer-text{
+  padding: 0% 6% 0 7%;
+}
+
+@media screen and (min-width: 1000px) { 
+  .offer{
+    position: relative;
+    padding: 0;
+    padding-top: 7%; 
+    color: white;
+  }
+
+  .offer-side-pattern{ 
+    width: 350px;
+    position: absolute;
+    top:20%
+  } 
+
+  .offer-card{
+    padding: 10%;
+  }
+}
+
+@media screen and (max-width: 1000px) { 
+  .offer{
+    padding: 7% 6% 0 7%; 
+    color: white;
+  }
+
+  .offer-side-pattern{ 
+    display: none;
+  }
+  
+  .offer-card{
+    padding: 5% 10%;
+  }
+}
+
+
+.offer-icon{
+  padding-bottom: 20px;
+}
