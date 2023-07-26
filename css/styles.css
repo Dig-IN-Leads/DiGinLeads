@@ -1,5 +1,7 @@
+/* Universal */
 body, html {
   height: 100%;
+  letter-spacing: 1px;
 }
 
 .row{
@@ -18,7 +20,6 @@ hr{
   padding: 0;
 }
 
-/* Universal */
 .color-white{
   background-color: white;
 }
@@ -161,7 +162,6 @@ hr{
 
 .card-text{
   font-size: 1.2rem;
-  letter-spacing: 1px;
   color: rgb(255,255,255,0.8);
 }
 
@@ -182,7 +182,7 @@ hr{
   .offer{
     position: relative;
     padding: 0;
-    padding-top: 7%; 
+    padding: 7% 0%; 
     color: white;
   }
 
@@ -193,7 +193,7 @@ hr{
   } 
 
   .offer-card{
-    padding: 10%;
+    padding: 10% 10% 10% 5%;
   }
 }
 
@@ -212,7 +212,107 @@ hr{
   }
 }
 
-
 .offer-icon{
   padding-bottom: 20px;
+}
+
+/* Figures */
+.figures{
+  background-color: #f3f5f7;
+  text-align: center;
+  padding: 7% 7% 5%;
+}
+
+.figures-head{
+  font-size: 3rem;
+  color: rgb(5,20,36);
+  padding-bottom: 7%;
+} 
+
+.figures-card{
+  padding: 30px 15px;
+  margin: 15px;
+  border-width: 7px 0 0 0;
+  border-color: rgb(5,20,36);
+  color: rgb(5,20,36);
+  text-align: left;
+}
+
+.figures-numbers{
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+
+.figures-unit{
+  font-size: 1.5rem;
+}
+
+.figures-text{
+  font-size: 1.2rem;
+}
+
+/* Why DiGinLeads */
+.benefits{
+  padding: 7% 7% 5%;
+  color: white;
+}
+
+.why-diginleads-background{
+  width: 100%;
+  padding-top: 100px;
+}
+
+.accordion{
+  padding: 20px 0 0 30px;
+}
+
+.accordion hr{
+  width: 100%;
+  transform: translate(0%, 0%);
+  margin: 20px 0;
+}
+
+.accordion-button{
+  background-color: rgb(5,20,36);
+  color: white;
+}
+
+.accordion-button::after {
+  content: none;
+}
+
+/* Add a custom background image to the collapsed accordion button */
+.accordion-item .accordion-button:not(.collapsed) {
+  background-image: url('../images/substract-icon.svg');
+  background-repeat: no-repeat;
+  background-position: right center; 
+  padding-right: 30px; 
+}
+
+/* Add a custom background image to the expanded accordion button */
+.accordion-item .accordion-button.collapsed {
+  background-image: url('../images/add-icon.svg');
+  background-repeat: no-repeat;
+  background-position: right center;
+  padding-right: 30px; 
+}
+
+.accordion-item .accordion-button:not(.collapsed) {
+  background-color: rgb(5,20,36);
+  color: white;
+}
+
+.accordion-header{
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.benefits-hr{
+  width: 90%;
+  margin: 7% 0 5%;
+}
+
+/* Testimonials */
+.testimonials{
+  background-color: rgb(5,20,36);
 }
