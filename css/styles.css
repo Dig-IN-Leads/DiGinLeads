@@ -253,8 +253,9 @@ hr{
 
 /* Why DiGinLeads */
 .benefits{
-  padding: 7% 7% 5%;
+  padding: 7% 7% 2%;
   color: white;
+  border: none;
 }
 
 .why-diginleads-background{
@@ -309,10 +310,55 @@ hr{
 
 .benefits-hr{
   width: 90%;
-  margin: 7% 0 5%;
+  margin: 5% 0;
 }
 
 /* Testimonials */
 .testimonials{
   background-color: rgb(5,20,36);
+  text-align: center;
+  color: white;
+  position: relative;
+  padding-bottom: 2%;
 }
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  margin: 5% 7%;
+  position: relative;
+}
+
+.carousel{
+  width: 85%;
+}
+
+.testimonial-images{
+  height: 110px;
+  width: 110px;
+  border-radius: 100%;
+  margin-top: 10px;
+}
+
+.testimonial-text{
+  text-align: left;
+}
+
+.testimonial-name{
+  font-size: 1.3rem;
+}
+
+.carousel-button{
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  bottom: 6%;
+  right: 10%;
+}
+
+.carousel-button-left, .carousel-button-right{
+  height: 40px;
+  width: 40px;
+  padding: 20px;
+}
+
