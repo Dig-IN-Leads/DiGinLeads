@@ -387,3 +387,20 @@ hr{
   height:55rem;
 }
 
+/* Footer */
+.footer{
+  padding: 3% 5%;
+}
+
+.footer .card-text{
+  font-size: 1rem;
+}
+
+.social-media-icon{
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  background-color: rgb(255,255,255,0.1);
+  text-align: center;
+  margin-right: 20px;
+}
