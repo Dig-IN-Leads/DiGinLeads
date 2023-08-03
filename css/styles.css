@@ -43,10 +43,12 @@ hr{
 }
 
 .navbar{
-  padding: 20px 50px;
+  padding: 2% 7%;
 }
 
 .nav-item{
+  font-size: 1.05rem;
+  font-weight: 500;
   padding: 0px 20px;
 }
 
@@ -58,9 +60,18 @@ hr{
   text-decoration: underline;
 }
 
-.navbar .btn:hover{
-  background-color: rgb(5,20,36);
-  box-shadow: 0px 0px 20px rgb(5,20,36);
+.navbar .btn{
+  color:black;
+  border-radius: 0;
+  border-width: 3px;
+  height: 45px;
+  font-weight: 500;
+}
+
+.navbar .btn:hover {
+  background-color: white;
+  color: inherit;
+  text-decoration: none;
 }
 
 /* Head */
@@ -75,18 +86,18 @@ hr{
   text-align: left;
   position: absolute;
   top: 50%;
-  left: 34.5%;
+  left: 38%; 
   transform: translate(-50%, -50%);
   color: black;
   width: 60%;
 }
 
 .head-text{
-  font-size: 1.5rem;
+  font-size: 140%;
 }
 
 .heading{
-  font-size: 4rem;
+  font-size: 4.5rem;
   line-height: 1.5;
   font-family: 'Outfit', sans-serif;
 }
@@ -137,13 +148,10 @@ hr{
 
 /* Apply the pulse animation on the button on hover */
 .get-in-touch:hover {
-  animation: none; /* Remove the pulse animation on hover */
-  box-shadow: 0 0 20px rgba(5, 20, 36, 0.7); /* Add a shadow effect on hover */
+  animation: none; 
+  box-shadow: 0 0 20px rgba(5, 20, 36, 0.7); 
 }
 
-.get-in-touch:hover{
-  transform: scale(1.25);
-}
 
 .vl {
   width: 1.5px;
@@ -177,7 +185,7 @@ hr{
   animation: bounce 1s infinite; /* Adjust the duration as needed */
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
   .about-us-slide{
     height: 100%;
     width: 220px;
@@ -187,7 +195,7 @@ hr{
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 768px) {
   .about-us-image{
     width: 100%;
     height: 100%;
@@ -197,7 +205,7 @@ hr{
     height: 100%;
     width: 220px;
     position: absolute;
-    top: -10%;
+    top: -5%;
     right: 0;
   }
 }
@@ -217,15 +225,38 @@ hr{
 }
 
 .get-in-touch-2{
+  /* display: block; */
   margin: 25px 0;
   height: 60px;
   width: 190px;
   border-radius: 0;
   font-size: 1.2rem;
+  position: relative;
+  transition: all .35s;
+}
+
+.get-in-touch-2 span{
+  position: relative;
+  z-index: 2;
+}
+
+.get-in-touch-2:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #fff;
+  transition: all .35s;
 }
 
 .get-in-touch-2:hover{
-  box-shadow: 10px 0px 30px rgb(167, 183, 200);
+  color: black;
+}
+
+.get-in-touch-2:hover:after{
+  width: 100%;
 }
 
 /* Offer */
@@ -233,7 +264,7 @@ hr{
   padding: 0% 6% 0 7%;
 }
 
-@media screen and (min-width: 1000px) { 
+@media screen and (min-width: 768px) { 
   #offer{
     position: relative;
     padding: 0;
@@ -252,7 +283,7 @@ hr{
   }
 }
 
-@media screen and (max-width: 1000px) { 
+@media screen and (max-width: 768px) { 
   #offer{
     padding: 7% 6% 0 7%; 
     color: white;
@@ -335,6 +366,11 @@ hr{
 
 .accordion-button::after {
   content: none;
+}
+
+.accordion-button:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 /* Add a custom background image to the collapsed accordion button */
@@ -420,7 +456,7 @@ hr{
 /* contact-us */
 .contact-background {
   background-image: linear-gradient(rgba(5, 20, 36, 0.6), rgba(5, 20, 36, 0.6)), url("../images/contact-us-background\ \(2\).jpg");
-  height: 70rem;
+  height: 65rem;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -437,9 +473,36 @@ hr{
   color: white;
 }
 
-.calendly-inline-widget{
-  width:100%;
-  height:55rem;
+.contact-form{
+  background-color: white;
+  color: black;
+  text-align: center;
+  margin: 7%;
+  font-weight: 600;
+  padding: 5%;
+}
+
+.form-head{
+  margin-bottom: 40px;
+  font-size: 150%;
+}
+
+.contact-form-inner{
+  text-align: left;
+}
+
+.input-box{
+  margin: 5px 0 30px 0;
+  border-radius: 0;
+  height: 50px;
+}
+
+.submit-btn{
+  margin-top: 20px;
+  border-radius: 0;
+  height: 50px;
+  width: 150px;
+  font-size: 1.2rem;
 }
 
 /* Footer */

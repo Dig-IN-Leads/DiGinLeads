@@ -7,66 +7,15 @@
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Outfit:wght@500&display=swap" rel="stylesheet">
+    
+    <script src="script.js"></script>
     <link href="css/styles.css" rel="stylesheet">
     
     <meta charset="utf-8">
     <title>DiGinLeads</title>
   </head>
   <body>
-    <script>
-      // Function to animate the counter effect
-      function animateCounter(element) {
-        const target = parseInt(element.textContent);
-        let count = 0;
-        const duration = 3000; // Animation duration in milliseconds
-        const stepTime = Math.abs(Math.floor(duration / target));
-    
-        const timer = setInterval(() => {
-          count++;
-          element.textContent = count;
-          if (count === target) {
-            clearInterval(timer);
-          }
-        }, stepTime);
-      }
-    
-      // Callback function for the Intersection Observer
-      function handleIntersection(entries, observer) {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const counterElement = entry.target;
-            if (!counterElement.classList.contains('counted')) {
-              counterElement.classList.add('counted');
-              animateCounter(counterElement);
-            }
-            observer.unobserve(counterElement);
-          }
-        });
-      }
-    
-      // Function to setup the Intersection Observer
-      function setupIntersectionObserver() {
-        const counterElements = document.querySelectorAll('.counter');
-        const observerOptions = {
-          root: null,
-          rootMargin: '0px',
-          threshold: 0.8,
-        };
-    
-        const observer = new IntersectionObserver(handleIntersection, observerOptions);
-        counterElements.forEach((element) => {
-          observer.observe(element);
-        });
-      }
-    
-      // Trigger the setup when the DOM is ready
-      document.addEventListener('DOMContentLoaded', () => {
-        setupIntersectionObserver();
-      });
-    </script>
-    
-    
-    <nav class="navbar navbar-expand-lg color-white">
+     <nav class="navbar navbar-expand-md color-white">
       <div class="container-fluid">
         <a class="navbar-brand d-flex justify-content-start" href="#"><img src="images/logo.png"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbarToggler">
@@ -80,7 +29,9 @@
           </ul>
         </div>
         <div class="collapse navbar-collapse justify-content-end navbarToggler">
-          <a onclick="Calendly.initPopupWidget({url: 'https://calendly.com/arpit_baheti/book-a-meeting'});return false;"><button type="button" class="btn btn-outline-dark">Schedule meeting</button></a>
+          <a onclick="Calendly.initPopupWidget({url: 'https://calendly.com/arpit_baheti/book-a-meeting'});return false;">
+            <button type="button" class="btn btn-outline-dark"><img src="images/call-icon.png"> Schedule meeting</button>
+          </a>
         </div>
       </div>
     </nav>    
@@ -109,7 +60,7 @@
       </div>
     
       <div id="about-us-details" class="row about-us-row">
-        <div class="col-lg-6">
+        <div class="col-md-6">
           <div class="card about-us-card color-theme border-0 m-0">
             <div class="card-body">
               <p style="font-size: 3rem;" class="card-title"><Strong>Who</Strong> Are We</p>
@@ -122,11 +73,11 @@
                   with confidence. Experience exponential growth and prominence in this fiercely competitive market. 
                 Partner with us for a transformative journey to success.</p>
                 
-                <a href="#contact-us"><button type="button" class="btn btn-primary get-in-touch-2">Get in touch <img style="width: 30px;" src="images/arrow-right.png"></button></a>
+                <a href="#contact-us"><button type="button" class="btn btn-primary get-in-touch-2"><span>Get in touch →</span></button></a>
             </div>
           </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-md-6">
           <div class="card about-us-card color-theme border-0 m-0 p-5">
             <div class="card-body">
               <img class="about-us-background" src="images/about-us-background.png">
@@ -139,7 +90,7 @@
     
     <!-- Offer -->
     <div id="offer" class="color-theme">
-      <div class="col-lg-9 offer-text">
+      <div class="col-md-9 offer-text">
         <p class="card-title" style="font-size: 3rem;"><strong>What</strong> We Offer</p>
         <p class="card-text">Tailored services and consultancy for your business growth. Our experienced team 
           understands your unique goals, offering expert support to propel you forward. Unlock your business's 
@@ -147,12 +98,12 @@
       </div>
 
       <div class="row">
-        <div class="col-lg-2">
+        <div class="col-md-2">
           <img class="offer-side-pattern" src="images/offer-side-pattern.png">
         </div>
-        <div class="col-lg-10">
+        <div class="col-md-10">
           <div class="row">
-            <div class="col-lg-6">
+            <div class="col-md-6">
               <div class="card color-theme border-0">
                 <div class="card-body offer-card">
                   <img class="offer-icon" src="images/lead-generation-icon.svg">
@@ -163,7 +114,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-6"> 
+            <div class="col-md-6"> 
               <div class="card color-theme border-0">
                 <div class="card-body offer-card">
                   <img class="offer-icon" src="images/web-development-icon.svg">
@@ -176,7 +127,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-6"> 
+            <div class="col-md-6"> 
               <div class="card color-theme border-0">
                 <div class="card-body offer-card">
                   <img class="offer-icon" src="images/seo-icon.svg">
@@ -187,7 +138,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-6"> 
+            <div class="col-md-6"> 
               <div class="card color-theme border-0">
                 <div class="card-body offer-card">
                   <img class="offer-icon" src="images/social-media-icon.svg">
@@ -208,38 +159,38 @@
       <p class="figures-head">With <strong>US</strong>, You <strong>WIN</strong> We PROMISE!</p>
       
       <div class="row m-0">
-        <div class="col-lg-3 col-sm-6">
+        <div class="col-md-3 col-sm-6">
           <div class="card figures-card">
             <div class="card-body">
               <img src="images/leadflow-icon.svg">
-              <p><span class="figures-numbers counter">10</span><span class="figures-unit"> times</span></p>
+              <p><span class="figures-numbers counter count-animate" data-endvalue="10" data-duration="1000">0</span><span class="figures-unit"> times</span></p>
               <p class="figures-text"><em><strong>Increase</strong> in High-quality lead inflow</em></p>
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-sm-6">
+        <div class="col-md-3 col-sm-6">
           <div class="card figures-card">
             <div class="card-body">
               <img src="images/adspends-icon.svg">
-              <p><span class="figures-numbers counter">100</span><span class="figures-unit"> %</span></p>
+              <p><span class="figures-numbers counter count-animate" data-endvalue="100" data-duration="5000">0</span><span class="figures-unit"> %</span></p>
               <p class="figures-text"><em>Return on <strong>Ad Spends</strong></em></p>
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-sm-6">
+        <div class="col-md-3 col-sm-6">
           <div class="card figures-card">
             <div class="card-body">
               <img src="images/builds-icon.svg">
-              <p><span class="figures-numbers counter">110</span><span class="figures-unit"> %</span></p>
+              <p><span class="figures-numbers counter count-animate" data-endvalue="110" data-duration="5500">0</span><span class="figures-unit"> %</span></p>
               <p class="figures-text"><em>Brand <strong>Build</strong><br /><br /></em></p>
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-sm-6">
+        <div class="col-md-3 col-sm-6">
           <div class="card figures-card">
             <div class="card-body">
               <img src="images/conversions-icon.svg">
-              <p><span class="figures-numbers counter">50</span><span class="figures-unit"> %</span></p>
+              <p><span class="figures-numbers counter count-animate" data-endvalue="50" data-duration="2500">0</span><span class="figures-unit"> %</span></p>
               <p class="figures-text"><em>Increase in <strong>conversions</strong></em></p>
             </div>
           </div>
@@ -250,7 +201,7 @@
     <!-- Why DiGinLeads -->
     <div class="benefits color-theme">
       <div class="row m-0">
-        <div class="col-lg-5">
+        <div class="col-md-5">
           <div class="card color-theme border-0">
             <div class="card-body">
               <p class="card-title" style="font-size: 3rem;"><strong>Why</strong> DigINLeads?</p>
@@ -258,17 +209,17 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-7">
+        <div class="col-md-7">
           <div class="card color-theme border-0">
             <div class="card-body">
-              <div class="accordion" id="accordionPanelsStayOpenExample">
+              <div class="accordion" id="accordionPanels">
 
                 <hr />
                 <div class="accordion-item color-theme border-0">
                   <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne">
                       <p class="accordion-header">Increased Online Visibility</p>
                     </button>
-                  <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                  <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionPanels">
                     <div class="accordion-body card-text">
                       Increases online visibility through SEO, targeted advertising, and website optimization, making it easier for potential 
                       clients to discover your business and services.
@@ -281,7 +232,7 @@
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo">
                     <p class="accordion-header">Enhanced Lead Generation</p>
                   </button>
-                  <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                  <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionPanels">
                     <div class="accordion-body card-text">
                       Enhances lead generation through targeted advertising, SEO optimization, and engaging content, attracting qualified 
                       prospects and nurturing them into potential clients for increased business success.
@@ -294,7 +245,7 @@
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree">
                     <p class="accordion-header">Cost-Effective Marketing</p>
                   </button>
-                  <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                  <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionPanels">
                     <div class="accordion-body card-text">
                       We offers affordable alternatives to traditional advertising. With targeted campaigns and measurable results, 
                       you get more value for your marketing budget.
@@ -307,7 +258,7 @@
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour">
                     <p class="accordion-header">Improved Customer Engagement</p>
                   </button>
-                  <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+                  <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionPanels">
                     <div class="accordion-body card-text">
                       Provides customer engagement through targeted content, social media interactions, and personalized communication, 
                       fostering trust and loyalty with potential buyers and sellers.
@@ -320,7 +271,7 @@
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive">
                     <p class="accordion-header">Measurable Results and Analytics</p>
                   </button>
-                  <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
+                  <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionPanels">
                     <div class="accordion-body card-text">
                       Businesses gain access to comprehensive analytics and measurable results. This data-driven approach allows them to 
                       assess the effectiveness of their marketing efforts, identify areas for improvement, and make informed decisions 
@@ -330,7 +281,8 @@
                 </div>
                 <hr />
                 
-                <button type="button" class="btn btn-primary get-in-touch-2">Get in touch <img style="width: 30px;" src="images/arrow-right.png"></button>
+                <!-- <a href="#contact-us"><button type="button" class="btn btn-primary get-in-touch-2"><span>Get in touch <img style="width: 30px;" src="images/arrow-right.png"></span></button></a> -->
+                <a href="#contact-us"><button type="button" class="btn btn-primary get-in-touch-2"><span>Get in touch →</span></button></a>
               </div>
             </div>
           </div>
@@ -348,14 +300,14 @@
         <div id="carousel" class="carousel slide carousel-fade">
           <div class="carousel-item active">
             <div class="row">
-              <div class="col-lg-2">
+              <div class="col-md-2">
                 <div class="card color-theme border-0">
                   <div class="card-body">
                     <img class="testimonial-images" src="images/Bren.jpg">
                   </div>
                 </div>
               </div>
-              <div class="col-lg-10">
+              <div class="col-md-10">
                 <div class="card color-theme border-0">
                   <div class="card-body testimonial-text">
                     <p class="card-text">
@@ -373,14 +325,14 @@
 
           <div class="carousel-item">
             <div class="row">
-              <div class="col-lg-2">
+              <div class="col-md-2">
                 <div class="card color-theme border-0">
                   <div class="card-body">
                     <img class="testimonial-images" src="images/Bren.jpg">
                   </div>
                 </div>
               </div>
-              <div class="col-lg-10">
+              <div class="col-md-10">
                 <div class="card color-theme border-0">
                   <div class="card-body testimonial-text">
                     <p class="card-text">
@@ -400,14 +352,14 @@
 
           <div class="carousel-item">
             <div class="row">
-              <div class="col-lg-2">
+              <div class="col-md-2">
                 <div class="card color-theme border-0">
                   <div class="card-body">
                     <img class="testimonial-images" src="images/Bren.jpg">
                   </div>
                 </div>
               </div>
-              <div class="col-lg-10">
+              <div class="col-md-10">
                 <div class="card color-theme border-0">
                   <div class="card-body testimonial-text">
                     <p class="card-text">
@@ -441,10 +393,25 @@
       <div class="contact-background">
         <div class="contact-text">
           <p class="card-title" style="font-size: 3rem;">Take your <strong>business</strong> to new heights with <strong>DigInleads</strong></p>
-          <!-- Calendly inline widget begin -->
-          <div class="calendly-inline-widget" data-url="https://calendly.com/arpit_baheti/book-a-meeting?hide_gdpr_banner=1"></div>
-          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-          <!-- Calendly inline widget end -->
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-8 contact-form">
+                <form>
+                  <p class="form-head">Get in touch with us</p>
+                  <div class="mb-3 contact-form-inner">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control input-box" id="name" placeholder="Enter name">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control input-box" id="email" placeholder="Enter email address">
+                    <label for="number" class="form-label">Phone number</label>
+                    <input type="number" class="form-control input-box" id="number" placeholder="Enter phone number">
+                  </div>
+                  <button type="submit" class="btn btn-primary submit-btn">Submit →</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
         </div>
       </div>
     </div>
@@ -452,7 +419,7 @@
     <!-- Footer -->
     <div class="footer color-theme">
       <div class="row">
-        <div class="col-lg-4">
+        <div class="col-md-4">
           <div class="card color-theme border-0">
             <div class="card-body">
               <img src="images/logo-2.png">
@@ -460,7 +427,7 @@
           </div>
         </div>
 
-        <div class="col-lg-5">
+        <div class="col-md-5">
           <div class="card color-theme border-0">
             <div class="card-body">
               <p class="card-text"><strong>Contact us</strong></p>
@@ -471,7 +438,7 @@
           </div>
         </div>
 
-        <div class="col-lg-3">
+        <div class="col-md-3">
           <div class="card color-theme border-0">
             <div class="card-body">
               <p class="card-text"><strong>Follow us</strong></p>
@@ -486,6 +453,6 @@
     </div>
 
     <!-- Fixed button -->
-    <a onclick="Calendly.initPopupWidget({url: 'https://calendly.com/arpit_baheti/book-a-meeting'});return false;"><img src="images/fixed-image.png" class="fixed-image"></a>
+    <a onclick="Calendly.initPopupWidget({url: 'https://calendly.com/arpit_baheti/book-a-meeting'});return false;"><img src="images/fixed-image.png" class="fixed-image" style="display: none;"></a>
   </body>
 </html>
