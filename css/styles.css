@@ -3,6 +3,7 @@ body, html {
   height: 100%;
   letter-spacing: 1px;
   font-family: 'Open Sans', sans-serif;
+  background-color: rgb(5,20,36);
 }
 
 .row{
@@ -77,6 +78,7 @@ hr{
 /* Head */
 .head-background{
   background-image: url("../images/head-pattern.png");
+  background-color: #fff;
   background-position-y: 14%;
   background-position-x: 14px;
   height: 450px;
@@ -96,10 +98,20 @@ hr{
   font-size: 140%;
 }
 
-.heading{
-  font-size: 4.5rem;
-  line-height: 1.5;
-  font-family: 'Outfit', sans-serif;
+@media screen and (min-width: 1024px){
+  .heading{
+    font-size: 450%;
+    line-height: 1.5;
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .heading{
+    font-size: 350%;
+    line-height: 1.5;
+    font-family: 'Outfit', sans-serif;
+  }
 }
 
 /* About us */

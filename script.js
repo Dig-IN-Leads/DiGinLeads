@@ -1,15 +1,21 @@
-// Function to animate the counter
+// Function to animate the counter using requestAnimationFrame
 function animateCounter(targetElement, startValue, endValue, duration) {
   const range = endValue - startValue;
-  const stepTime = Math.abs(Math.floor(duration / range));
-  let currentValue = startValue;
-  const timer = setInterval(function () {
-    currentValue += range > 0 ? 1 : -1;
+  const startTime = performance.now();
+
+  function updateCounter(currentTime) {
+    const elapsedTime = currentTime - startTime;
+    const progress = Math.min(elapsedTime / duration, 1);
+    const currentValue = Math.round(startValue + range * progress);
+
     targetElement.textContent = currentValue;
-    if ((range > 0 && currentValue >= endValue) || (range < 0 && currentValue <= endValue)) {
-      clearInterval(timer);
+
+    if (progress < 1) {
+      requestAnimationFrame(updateCounter);
     }
-  }, stepTime);
+  }
+
+  requestAnimationFrame(updateCounter);
 }
 
 // Function to start the counting animation for a single counter
@@ -24,37 +30,31 @@ function startSingleCounter(element) {
 function startCountAnimation() {
   const counters = document.querySelectorAll('.count-animate');
   counters.forEach(counter => {
-    // Check if the element is in the viewport
-    const rect = counter.getBoundingClientRect();
-    const viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
-    if (rect.top < viewHeight) {
-      startSingleCounter(counter);
-    } else {
-      // Create the Intersection Observer
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            observer.unobserve(entry.target); // Stop observing once it's visible
-            startSingleCounter(entry.target);
-          }
-        });
-      }, { threshold: 0.5 });
-
-      // Start observing each element with class 'count-animate'
-      observer.observe(counter);
-    }
+    startSingleCounter(counter);
   });
 }
 
-// Call the counting animation function when the page loads
-document.addEventListener('DOMContentLoaded', startCountAnimation);
+// Listen for the 'load' event on the window to start counter animation after full page load
+window.onload = function() {
+  startCountAnimation();
+};
 
 
-// Function to toggle the visibility of the .fixed-image button based on scroll position
+
+// Function to toggle the visibility of the .fixed-image button based on scroll position and screen width
 function toggleFixedImageButton() {
   const button = document.querySelector('.fixed-image');
   const footer = document.querySelector('.footer');
-  const scrollPercentageToShowButton = 17; // Adjust this value to set the scroll percentage to show the button
+  let scrollPercentageToShowButton;
+
+  if (window.innerWidth < 768) { // Small screens
+    scrollPercentageToShowButton = 0; // Adjust this value for small screens
+  } else if (window.innerWidth < 992) { // Medium screens
+    scrollPercentageToShowButton = 13; // Adjust this value for medium screens
+  } else { // Large screens
+    scrollPercentageToShowButton = 18; // Adjust this value for large screens
+  }
+
   const scrollPercentageToStop = 93; // Adjust this value to set the scroll percentage to stop showing the button
 
   const scrollOffset = window.scrollY || document.documentElement.scrollTop;
@@ -63,7 +63,7 @@ function toggleFixedImageButton() {
   const footerOffset = footer.offsetTop; // Get the offset from the top of the document to the footer
 
   const scrollPercentage = (scrollOffset / (documentHeight - windowHeight)) * 100;
-  
+
   // Calculate the scroll percentage considering the footer height
   const scrollPercentageWithFooter = ((scrollOffset + windowHeight) / (documentHeight + footer.offsetHeight)) * 100;
 
