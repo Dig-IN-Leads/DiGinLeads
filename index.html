@@ -30,7 +30,7 @@
           </ul>
         </div>
         <div class="collapse navbar-collapse justify-content-end navbarToggler">
-          <a onclick="Calendly.initPopupWidget({url: 'https://calendly.com/arpit_baheti/book-a-meeting'});return false;">
+          <a onclick="Calendly.initPopupWidget({url: 'https://calendly.com/diginleads-sdc/30min'});return false;">
             <button type="button" class="btn btn-outline-dark"><img src="images/call-icon.png"> Schedule meeting</button>
           </a>
         </div>
@@ -397,17 +397,17 @@
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-lg-8 contact-form">
-                <form>
+                <form id="response-form" method="post" onsubmit="submitForm(event)">
                   <p class="form-head">Get in touch with us</p>
                   <div class="mb-3 contact-form-inner">
                     <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control input-box" id="name" placeholder="Enter name">
+                    <input type="text" class="form-control input-box" id="Name" placeholder="Enter name" name="Name">
                     <label for="email" class="form-label">Email address</label>
-                    <input type="email" class="form-control input-box" id="email" placeholder="Enter email address">
+                    <input type="email" class="form-control input-box" id="Email address" placeholder="Enter email address" name="Email address">
                     <label for="number" class="form-label">Phone number</label>
-                    <input type="number" class="form-control input-box" id="number" placeholder="Enter phone number">
+                    <input type="number" class="form-control input-box" id="Phone No" placeholder="Enter phone number" name="Phone No">
                   </div>
-                  <button type="submit" class="btn btn-primary submit-btn">Submit →</button>
+                  <button type="submit" value="Submit" class="btn btn-primary submit-btn">Submit →</button>
                 </form>
               </div>
             </div>
@@ -433,7 +433,7 @@
             <div class="card-body">
               <p class="card-text"><strong>Contact us</strong></p>
               <br />
-              <p class="card-text"><strong>Email:</strong> diginleads1@gmail.com</p>
+              <p class="card-text"><strong>Email:</strong> <a style="text-decoration: none;" href = "mailto: diginleads@gmail.com">diginleads@gmail.com</a></p>
               <p class="card-text"><strong>Phone number:</strong> +917742283868, +918104128267</p>
             </div>
           </div>
@@ -445,7 +445,7 @@
               <p class="card-text"><strong>Follow us</strong></p>
               <br />
               <button class='social-media-icon btn' href=""><img src="images/facebook.png"></button>
-              <button class='social-media-icon btn' href=""><img src="images/twitter.png"></button>
+              <!-- <button class='social-media-icon btn' href=""><img src="images/twitter.png"></button> -->
               <button class='social-media-icon btn' href=""><img src="images/linked-in.png"></button>
             </div>
           </div>
@@ -454,6 +454,6 @@
     </div>
 
     <!-- Fixed button -->
-    <a onclick="Calendly.initPopupWidget({url: 'https://calendly.com/arpit_baheti/book-a-meeting'});return false;"><img src="images/fixed-image.png" class="fixed-image" style="display: none;"></a>
+    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/diginleads-sdc/30min'});return false;"><img src="images/fixed-image.png" class="fixed-image" style="display: none;"></a>
   </body>
 </html>
