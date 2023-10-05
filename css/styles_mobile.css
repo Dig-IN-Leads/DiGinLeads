@@ -1,0 +1,299 @@
+/* Mobile display */
+@media (max-width: 435px)
+{
+  .navbar{
+    width: 100%;
+    padding: 2.75rem 1.25rem 0rem 1.25rem;
+  }
+
+  .navbar-brand img{
+    height: 1.5rem;
+    width: 8rem;
+    object-fit: contain;
+  }
+
+  .navbar-toggler img{
+    width: 1.25rem;
+    height: 1rem;
+  }
+
+  /* Heading */
+  .head-background{
+    background-image: none;
+    padding: 4.25rem 1.25rem 2rem 1.25rem;
+    height: 100%;
+    width: 100%;
+  }
+
+  .head-text p{
+    font-size: 1rem;
+  }
+
+  @media(max-width:360px) 
+  { 
+    .head-text h1{
+      font-size: 195%;
+      line-height: 3rem;
+    }
+  }
+
+  @media(min-width:360px)
+  {
+    .head-text h1{
+      font-size: 200%;
+      line-height: 3rem;
+      width: 90%;
+    }
+  }
+
+  @media(min-width:405px)
+  {
+    .head-text h1{
+      font-size: 220%;
+      line-height: 3rem;
+    }
+  }
+
+  .about-us{
+    margin-top: 3.5rem;
+  }
+
+  .about-us-image-container{
+    height: 16.25rem;
+  }
+
+  .about-us-slide{
+    height: 18.9rem;
+    width: 8.75rem;
+    top: -2.65rem;
+    right: 0;
+  }
+
+  .get-in-touch{
+    height: 6.25rem;
+    width: 6.25rem;
+    left: 1.25rem;
+    top: -3.125rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+  }
+
+  .vl{
+    height: 6.75rem;
+    top: 5.5rem;
+  }
+
+  .arrow-down{
+    top: 12.75rem;
+  }
+
+  .explore-more{
+    font-size: 0.875rem; 
+  }
+
+  .scroll-d{
+    font-size: 0.75rem;
+  }
+
+  #about-us-details{
+    padding: 3.75rem 1.25rem;
+  }
+
+  .card-title{
+    font-size: 1.5rem;
+  }
+
+  .card-text{
+    line-height: 1.625rem;
+  }
+  
+  .about-us-background{
+    margin-top: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  hr{
+    height: 0.0625rem;
+    width: 21rem;
+  }
+
+  /* Offer */
+  #offer{
+    padding: 0rem 1.25rem 3.75rem;
+  }
+
+  .offer-side-pattern{
+    display: none;
+  }
+
+  .offer-icon{
+    height: 2.25rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Figures */
+  .figures{
+    padding: 3.75rem 0.75rem 2.88rem;
+  }
+
+  .figures-card{
+    height: 12.3rem;
+    margin: 0.5rem;
+    padding: 0.75rem;
+  }
+
+  .figures-icon{
+    height: 2.125rem;
+    width: 2.125rem;
+    margin: 1.38rem 0rem 1rem 0rem;
+  }
+
+  .figures-numbers{
+    font-size: 2.125rem;
+    font-weight: 700;
+  }
+
+  .figures-text{
+    width: 8.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.03125rem;
+  }
+
+  /* Why DiGINLeads */
+  .benefits{
+    padding: 3.75rem 1.25rem;
+  }
+  
+  .why-diginleads-background{
+    width: 100%;
+    margin: 2.4rem 0rem ;
+  }
+  
+  .accordion-button{
+    padding: 1.5rem 0rem;
+  }
+  
+  .accordion-head{
+    line-height: 1.625rem;
+    opacity: 1;
+    font-weight: 600;
+  }
+
+  .accordion-body{
+    padding-bottom: 1.5rem;
+  }
+
+  .get-in-touch-2{
+    margin: 2.25rem 0rem;
+    width: 9.0625rem;
+    height: 3rem;
+    font-size: 0.875rem;
+  }
+
+  /* Testimonials */
+  .testimonials{
+    padding: 0rem 1.25rem 4rem;
+  }
+
+  .testimonial-images{
+    display: none;
+  }
+
+  .carousel{
+    margin-top: 2.5rem;
+    font-size: 1rem;
+  }
+
+  .testimonial-text .card-text{
+    height: 15rem;
+  }
+
+  .carousel-button{
+    width: 4rem;
+    height: 2rem;
+    bottom: -0.5rem;
+    right: 1.25rem;
+  }
+  
+  .carousel-button-left img, .carousel-button-right img{
+    height: 2.25rem;
+    width: 2.25rem;
+  }
+
+  /* Contact-us */
+  .contact-background{
+    height: 44rem;
+  }
+
+  .contact-text{
+    padding: 3.75rem 1.25rem;
+  }
+
+  .contact-text .card-title{
+    line-height: 2.375rem;
+  }
+
+  .contact-form{
+    padding: 2.25rem 1rem;
+    margin-top: 2rem;
+  }
+
+  .form-head{
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-form-inner input{
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-form-inner label{
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
+
+  .submit-btn{
+    width: 7.2rem;
+    height: 2.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  /* Footer */
+  .footer{
+    padding: 0rem 1.5rem 1.5rem;
+    font-size: 0.875rem;
+  }
+
+  .footer-logo{
+    height: 1.25rem;
+  }
+
+  .footer .card{
+    margin-top: 2.5rem;
+  }
+
+  .social-media-icon{
+    background-color: rgb(255,255,255,0.1);
+    border-radius: 50%;
+    height: 2.25rem;
+    width: 2.25rem;
+    text-align: center;
+    padding: 0;
+    margin-right: 1rem;
+  }
+
+  .social-media-icon img{
+    margin-top: 20%;
+  }
+
+  /* Fixed image */
+  .fixed-image {
+    position: fixed;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    height: 5rem;
+  }
+
+}

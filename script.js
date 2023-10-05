@@ -26,11 +26,26 @@ function startSingleCounter(element) {
   animateCounter(element, 0, endValue, duration);
 }
 
-// Function to start the counting animation for all counters
+// Function to start the counting animation for all counters when they are in the viewport
 function startCountAnimation() {
   const counters = document.querySelectorAll('.count-animate');
+  const options = {
+    root: null, // Use the viewport as the root
+    rootMargin: '0px', // No margin
+    threshold: 0.5, // Trigger when 20% of the element is in the viewport
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        startSingleCounter(entry.target);
+        observer.unobserve(entry.target); // Stop observing after starting animation
+      }
+    });
+  }, options);
+
   counters.forEach(counter => {
-    startSingleCounter(counter);
+    observer.observe(counter);
   });
 }
 
@@ -39,23 +54,29 @@ window.onload = function() {
   startCountAnimation();
 };
 
-
-
 // Function to toggle the visibility of the .fixed-image button based on scroll position and screen width
 function toggleFixedImageButton() {
   const button = document.querySelector('.fixed-image');
   const footer = document.querySelector('.footer');
   let scrollPercentageToShowButton;
+  let scrollPercentageToStop;
 
-  if (window.innerWidth < 768) { // Small screens
-    scrollPercentageToShowButton = 0; // Adjust this value for small screens
-  } else if (window.innerWidth < 992) { // Medium screens
-    scrollPercentageToShowButton = 13; // Adjust this value for medium screens
+  if (window.innerWidth < 435) { // Small screens
+    scrollPercentageToShowButton = 11; // Adjust this value for small screens
+  } else if (window.innerWidth < 700) { // Small screens
+    scrollPercentageToShowButton = 10; // Adjust this value for small screens
+  } else if (window.innerWidth < 991) { // Medium screens
+    scrollPercentageToShowButton = 11; // Adjust this value for medium screens
   } else { // Large screens
     scrollPercentageToShowButton = 18; // Adjust this value for large screens
   }
 
-  const scrollPercentageToStop = 93; // Adjust this value to set the scroll percentage to stop showing the button
+  if (window.innerWidth < 766) { // Small screens
+    scrollPercentageToStop = 90; // Adjust this value to set the scroll percentage to stop showing the button
+  } else { // Small screens
+    scrollPercentageToStop = 94; // Adjust this value for small screens
+  }
+  // const scrollPercentageToStop = 90; // Adjust this value to set the scroll percentage to stop showing the button
 
   const scrollOffset = window.scrollY || document.documentElement.scrollTop;
   const windowHeight = window.innerHeight || document.documentElement.clientHeight;
